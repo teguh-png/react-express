@@ -1,0 +1,26 @@
+GET http://localhost:3002/api/product
+
+###
+GET http://localhost:3002/product/63d6abffd143b6c498a0a867
+###
+POST http://localhost:3002/product
+Content-Type: application/json
+
+{
+    "name" : "VGA",
+    "price": 8000000,
+    "stock": 12
+}
+
+###
+PUT http://localhost:3002/product/63d6c89cbdd99240e61478ce
+Content-Type: application/json
+
+{
+    "name" : "Webcam",
+    "price": 300000,
+    "stock": 10
+}
+
+###
+DELETE http://localhost:3002/product/63d6ab689e5534598b0cd05d
