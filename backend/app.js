@@ -4,6 +4,8 @@ const cors = require('cors');
 const productRouter = require('./routes/ProductRoute');
 
 const app = express();
+mongoose.set('strictQuery', false);
+
 mongoose.connect('mongodb://eduwork:asdasdasd@localhost:27017/react_express?authSource=admin');
 
 const db = mongoose.connection;

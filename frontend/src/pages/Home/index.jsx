@@ -46,10 +46,11 @@ const Home = () => {
           {products
             .filter((product) => {
               if (search === '') {
-                return product;
+                return true;
               } else if (product.name.toLowerCase().includes(search.toLowerCase())) {
-                return product;
+                return true;
               }
+              return false;
             })
             .map((product, index) => (
               <tr key={product._id}>

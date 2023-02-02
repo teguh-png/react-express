@@ -1,7 +1,7 @@
 const Product = require('../models/ProductModel');
 
-const index = (req, res) => {
-  Product.find()
+const index = async (req, res) => {
+  await Product.find()
     .then((result) => res.send(result))
     .catch((error) => res.send(error));
 };
@@ -15,8 +15,8 @@ const view = async (req, res) => {
   }
 };
 
-const store = (req, res) => {
-  Product.create({ ...req.body })
+const store = async (req, res) => {
+  await Product.create({ ...req.body })
     .then((result) => res.send(result))
     .catch((error) => res.send(error));
 };
@@ -31,10 +31,10 @@ const update = async (req, res) => {
   }
 };
 
-const destroy = (req, res) => {
+const destroy = async (req, res) => {
   const { id } = req.params;
 
-  Product.findByIdAndDelete(id)
+  await Product.findByIdAndDelete(id)
     .then((result) => res.send(result))
     .catch((error) => res.send(error));
 };
