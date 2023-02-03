@@ -58,7 +58,7 @@ const Home = () => {
                 <td>{product.name}</td>
                 <td className="text-right">
                   Rp.{` `}
-                  {product.price}
+                  {product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}
                 </td>
                 <td className="text-center">
                   <Link to={`detail/${product._id}`} className="btn btn-sm btn-info">

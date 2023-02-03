@@ -9,7 +9,7 @@ const Detail = () => {
 
   useEffect(() => {
     getDataByID();
-  }, [id]);
+  }, []);
 
   const getDataByID = async () => {
     const response = await axios.get(`http://localhost:3002/api/product/${id}`);
@@ -35,7 +35,7 @@ const Detail = () => {
             </tr>
             <tr>
               <td>Price</td>
-              <td>: Rp. {products.price}</td>
+              <td>: Rp. {products.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</td>
             </tr>
             <tr>
               <td>Stock</td>
